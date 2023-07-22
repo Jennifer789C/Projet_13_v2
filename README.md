@@ -51,6 +51,8 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
+- le module six n'est plus présent dans les versions récentes de 
+  pytest-django, nous devons donc l'installer : `pip install six`
 - `pytest`
 
 #### Base de données
@@ -59,9 +61,10 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Ouvrir une session shell `sqlite3`
 - Se connecter à la base de données `.open oc-lettings-site.sqlite3`
 - Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
+- Afficher les colonnes dans le tableau des profils, `pragma table_info
+  (oc_lettings_site_profile);`
 - Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
+  oc_lettings_site_profile where favorite_city like 'B%';`
 - `.quit` pour quitter
 
 #### Panel d'administration
