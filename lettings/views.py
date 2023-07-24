@@ -18,7 +18,7 @@ def index(request):
     Cette vue affiche une liste de tous les lieux de location
 
     **Contexte**
-    Liste de toutes les instances du :model:`letting.Letting`
+    Liste de toutes les instances du :model:`lettings.Letting`
 
     **Gabarit**
     :template:`lettings/index.html`

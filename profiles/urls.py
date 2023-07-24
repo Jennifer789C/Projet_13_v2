@@ -1,3 +1,6 @@
+"""
+Définit les points de terminaison de l'application 'Profiles'.
+"""
 from django.urls import path
 from . import views
 
