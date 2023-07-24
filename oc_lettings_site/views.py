@@ -1,3 +1,9 @@
+"""
+Définit les vues de l'application 'oc_lettings_site'.
+
+Cette application est composée d'une vue :
+- index, affiche le gabarit index.html
+"""
 from django.shortcuts import render
 
 
@@ -9,4 +15,10 @@ from django.shortcuts import render
 # orci placerat luctus. Nullam elementum urna nisi, pellentesque iaculis enim
 # cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.
 def index(request):
+    """
+    Cette vue affiche le gabarit index.html.
+
+    **Gabarit**
+    :template:`index.html`
+    """
     return render(request, 'index.html')

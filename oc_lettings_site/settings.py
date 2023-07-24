@@ -1,3 +1,6 @@
+"""
+Définit tous les paramètres du projet.
+"""
 import os
 
 from pathlib import Path
