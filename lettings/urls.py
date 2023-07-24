@@ -1,3 +1,6 @@
+"""
+Définit les points de terminaison de l'application 'Lettings'.
+"""
 from django.urls import path
 from . import views
 
