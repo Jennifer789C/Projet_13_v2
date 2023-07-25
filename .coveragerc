@@ -1,0 +1,2 @@
+[run]
+include = lettings/models.py, lettings/urls.py, lettings/views.py, profiles/models.py, profiles/urls.py, profiles/views.py, oc_lettings_site/urls.py, oc_lettings_site/views.py
