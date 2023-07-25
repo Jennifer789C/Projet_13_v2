@@ -54,6 +54,9 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - le module six n'est plus présent dans les versions récentes de 
   pytest-django, nous devons donc l'installer : `pip install six`
 - `pytest`
+- Pour tester la couverture des tests, nous devons installer les packages 
+  coverage `pip install coverage` et pytest-cov `pip install pytest-cov`
+- `pytest --cov`
 
 #### Base de données
 
