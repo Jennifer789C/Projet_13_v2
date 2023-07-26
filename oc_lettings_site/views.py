@@ -22,3 +22,8 @@ def index(request):
     :template:`index.html`
     """
     return render(request, 'index.html')
+
+
+def trigger_error(request):      # à supprimer
+    division_by_zero = 1 / 0
+    return division_by_zero

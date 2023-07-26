@@ -2,7 +2,8 @@
 Définit tous les paramètres du projet.
 """
 import os
-
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -117,3 +118,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static", ]
+
+
+# Sentry
+sentry_sdk.init(
+  dsn="https://46e25302b46e40fdbd7abcbb40c9c0a6@o4505596656812032.ingest.sentry.io/4505596663103488",
+  integrations=[DjangoIntegration()],
+
+  # Set traces_sample_rate to 1.0 to capture 100%
+  # of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces_sample_rate=1.0,
+
+  # If you wish to associate users to errors (assuming you are using
+  # django.contrib.auth) you may enable sending PII data.
+  send_default_pii=True
+)
