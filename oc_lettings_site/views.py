@@ -5,6 +5,10 @@ Cette application est composée d'une vue :
 - index, affiche le gabarit index.html
 """
 from django.shortcuts import render
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
