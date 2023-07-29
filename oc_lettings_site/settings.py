@@ -4,9 +4,11 @@ Définit tous les paramètres du projet.
 import logging
 import os
 import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
+from dotenv import load_dotenv
 from sentry_sdk.integrations.logging import LoggingIntegration
 from pathlib import Path
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -129,7 +131,7 @@ sentry_logging = LoggingIntegration(
 )
 
 sentry_sdk.init(
-  dsn="https://46e25302b46e40fdbd7abcbb40c9c0a6@o4505596656812032.ingest.sentry.io/4505596663103488",
+  dsn=os.environ.get("SENTRY_DSN"),
   integrations=[sentry_logging],
   traces_sample_rate=1.0,
 )
