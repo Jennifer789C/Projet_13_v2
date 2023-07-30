@@ -42,11 +42,12 @@ jobs:
           command: docker-compose up
 
 workflows:
-  jobs:
-    - build_and_test
-    - dockerize:
-        requires:
-          - build_and_test
-        filters:
-          branches:
-            only: main
+  build-dockerize-deploy:
+    jobs:
+      - build_and_test
+      - dockerize:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: main
