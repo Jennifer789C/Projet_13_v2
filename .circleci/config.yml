@@ -9,11 +9,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: compilation
-          command: |
-            python -m venv venv
-            ./venv/Scripts/activate
-            pip install -r requirements.txt
+          name: create venv
+          command: python -m venv venv
+      - run:
+          name: active venv
+          command: venv/Scripts/activate
+      - run:
+          name: install dependencies
+          command: pip install -r requirements.txt
       - run:
           name: linting
           command: flake8
