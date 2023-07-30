@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  python: circleci/python@2.1.1
+  docker: circleci/docker@2.2.0
 
 jobs:
   build_and_test:
@@ -21,3 +21,30 @@ jobs:
           name: testing
           command: pytest --cov
 
+  dockerize:
+    steps:
+      - setup_remote_docker
+      - checkout
+      - docker/build:
+          image: $DOCKER_IMAGE_NAME
+          tag: $CIRCLE_SHA1
+          registry: $DOCKER_REGISTRY
+      - docker/push:
+          image: $DOCKER_IMAGE_NAME
+          tag: $CIRCLE_SHA1
+          registry: $DOCKER_REGISTRY
+      - docker/pull:
+          images: $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$CIRCLE_SHA1
+      - run:
+          name: run Docker-compose
+          command: docker-compose up
+
+workflows:
+  jobs:
+    - build_and_test
+    - dockerize:
+        requires:
+          - build_and_test
+        filters:
+          branches:
+            only: main
