@@ -51,7 +51,7 @@ jobs:
       - checkout
       - run:
           name: deployment
-          command: curl -X GET ($RENDER_URL)
+          command: curl -X GET (https://api.render.com/deploy/srv-cj4dnq18g3nakvjpgfug?key=_rYkxFOiOj0)
 
 workflows:
   build-dockerize-deploy:
