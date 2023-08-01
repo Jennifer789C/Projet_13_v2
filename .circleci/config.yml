@@ -50,6 +50,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: collect static files
+          command: python manage.py collectstatic
+      - run:
           name: deployment
           command: curl -X GET $RENDER_URL
 
