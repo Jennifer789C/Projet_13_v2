@@ -48,6 +48,7 @@ jobs:
   deployment:
     docker:
       - image: cimg/base:stable
+    executor: python/default
     steps:
       - checkout
       - run:
