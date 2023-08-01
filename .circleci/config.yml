@@ -44,7 +44,7 @@ jobs:
           name: run Docker-compose
           command: docker-compose up
 
-  deployement:
+  deployment:
     docker:
       - image: cimg/base:stable
     steps:
