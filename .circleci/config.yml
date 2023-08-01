@@ -33,7 +33,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: login to Docker
-          command: docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
+          command: echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USER --password-stdin
       - run:
           name: build docker image
           command: docker build -t $DOCKER_IMAGE .
