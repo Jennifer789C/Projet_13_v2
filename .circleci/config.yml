@@ -38,9 +38,6 @@ jobs:
           name: build docker image
           command: docker build -t oc-lettings .
       - run:
-          name: tag docker image
-          command: docker tag oc-lettings:$CIRCLE_SHA1 $DOCKER_USER/oc-lettings:$CIRCLE_SHA1
-      - run:
           name: push docker image
           command: docker push $DOCKER_USER/oc-lettings:$CIRCLE_SHA1
       - run:
