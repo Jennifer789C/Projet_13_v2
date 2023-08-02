@@ -25,8 +25,8 @@ def index(request):
     **Gabarit**
     :template:`index.html`
     """
-    logger.info("Quelqu'un visite le site", exc_info=True, extra={
-        "request": request, })
+    logger.info("Quelqu'un visite le site", exc_info=True,
+                extra={"request": request, })
     return render(request, 'index.html')
 
 

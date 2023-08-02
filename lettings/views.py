@@ -7,6 +7,10 @@ Cette application est composée de 2 vues :
 """
 from django.shortcuts import render
 from .models import Letting
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 # Aenean leo magna, vestibulum et tincidunt fermentum, consectetur quis velit.
@@ -50,6 +54,8 @@ def letting(request, letting_id):
     :template:`lettings/letting.html`
     """
     letting = Letting.objects.get(id=letting_id)
+    logger.info(f"Quelqu'un consulte la location {letting.title}",
+                exc_info=True, extra={"request": request, })
     context = {
         'title': letting.title,
         'address': letting.address,

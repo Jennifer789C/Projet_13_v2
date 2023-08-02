@@ -7,6 +7,10 @@ Cette application est composée de 2 vues :
 """
 from django.shortcuts import render
 from .models import Profile
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 # Sed placerat quam in pulvinar commodo. Nullam laoreet consectetur ex, sed
@@ -43,5 +47,7 @@ def profile(request, username):
     :template:`profiles/profile.html`
     """
     profile = Profile.objects.get(user__username=username)
+    logger.info(f"Quelqu'un consulte le profil de {profile.user}",
+                exc_info=True, extra={"request": request, })
     context = {'profile': profile}
     return render(request, 'profiles/profile.html', context)
