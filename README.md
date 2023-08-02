@@ -37,6 +37,10 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
 - `pip install --requirement requirements.txt`
+- Créer un fichier `.env` pour y indiquer :
+```
+SECRET_KEY=<la SECRET_KEY de votre projet Django>
+```
 - `python manage.py runserver`
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
@@ -81,3 +85,15 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Sentry
+
+Sentry est une plateforme qui signale automatiquement les erreurs et les 
+exceptions du projet. Il permet également la surveillance des performances.
+
+- Créer un compte [Sentry](https://sentry.io/signup/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2F)
+- Créer un projet avec la plateforme `Django`
+- Récupérer la clé dsn et l'intégrer dans votre fichier .env
+```
+SENTRY_DSN=<la clé dsn de votre projet Sentry>
+```
