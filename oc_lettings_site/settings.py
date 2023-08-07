@@ -25,6 +25,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "oc-lettings-site.onrender.com"]
 
+CSRF_TRUSTED_ORIGINS = ["https://oc-lettings-site.onrender.com"]
 
 # Application definition
 
