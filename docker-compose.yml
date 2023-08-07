@@ -8,7 +8,7 @@ services:
     environment:
       - SQLITE3_DB=oc-lettings-site.sqlite3
   web:
-    image: jenny789/oc-lettings:latest
+    image: $DOCKER_USER/oc-lettings:$CIRCLE_SHA1
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
