@@ -103,6 +103,21 @@ SENTRY_DSN=<la clé dsn de votre projet Sentry>
 - Aller sur `http://localhost:8000/sentry-debug/` pour générer une 
   ZeroDivisionError
 
-### Docker
+
+## Développement local via Docker
+
+Docker est une plateforme permettant de lancer des applications en 
+utilisant des conteneurs logiciels.
+
+- Créer un compte [DockerHub](https://hub.docker.com/)
+- Installer Docker pour [Windows](https://docs.docker.com/desktop/install/windows-install/) ou pour [Mac](https://docs.docker.com/desktop/install/mac-install/)
+- Récupérer l'image docker pour exécuter l'application en local, `docker 
+  pull jenny789/oc-lettings:latest`
+- S'assurer que le serveur local n'est pas en cours d'exécution 
+- Lancer le serveur via Docker Compose, `docker-compose up` 
+- Le site doit fonctionner de la même façon avec les mêmes urls
+- Pour arrêter le serveur sans supprimer les ressources créées, 
+  `docker-compose stop` et pour l'arrêter en détruisant l'ensemble des 
+  ressources créées, `docker-compose down`
 
 ## Déploiement
