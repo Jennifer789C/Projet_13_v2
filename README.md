@@ -41,6 +41,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 ```
 SECRET_KEY=<la SECRET_KEY de votre projet Django>
 ```
+- `python manage.py collectstatic` pour récupérer les fichiers statiques
 - `python manage.py runserver`
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
@@ -97,3 +98,11 @@ exceptions du projet. Il permet également la surveillance des performances.
 ```
 SENTRY_DSN=<la clé dsn de votre projet Sentry>
 ```
+- Se connecter sur votre compte Sentry pour visualiser les logs récupérés 
+  par Sentry
+- Aller sur `http://localhost:8000/sentry-debug/` pour générer une 
+  ZeroDivisionError
+
+### Docker
+
+## Déploiement
