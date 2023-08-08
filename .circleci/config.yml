@@ -22,7 +22,33 @@ jobs:
           name: testing
           command: pytest --cov
 
+  dockerize:
+    docker:
+      - image: docker:latest
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: login to Docker
+          command: echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USER --password-stdin
+      - run:
+          name: build docker image
+          command: docker build -t $DOCKER_USER/oc-lettings:$CIRCLE_SHA1 .
+      - run:
+          name: push docker image
+          command: docker push $DOCKER_USER/oc-lettings:$CIRCLE_SHA1
+      - run:
+          name: run Docker-compose
+          command: docker-compose up
+
 workflows:
   build-dockerize-deploy:
     jobs:
       - build_and_test
+      - dockerize:
+          requires:
+            - build_and_test
+          # filters:
+            # branches:
+              # only: main
