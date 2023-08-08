@@ -1,0 +1,28 @@
+version: 2.1
+
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/python:3.10.6
+    steps:
+      - checkout
+      - run:
+          name: create venv
+          command: python -m venv venv
+      - run:
+          name: active venv
+          command: source venv/bin/activate
+      - run:
+          name: install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: linting
+          command: flake8
+      - run:
+          name: testing
+          command: pytest --cov
+
+workflows:
+  build-dockerize-deploy:
+    jobs:
+      - build_and_test
