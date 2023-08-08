@@ -58,13 +58,13 @@ workflows:
       - dockerize:
           requires:
             - build_and_test
-          # filters:
-            # branches:
-              # only: main
+          filters:
+            branches:
+              only: main
       - deployment:
           requires:
             - build_and_test
             - dockerize
-          # filters:
-            # branches:
-              # only: main
+          filters:
+            branches:
+              only: main

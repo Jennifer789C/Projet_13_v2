@@ -23,9 +23,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "oc-lettings-site.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "*.onrender.com"]
 
-CSRF_TRUSTED_ORIGINS = ["https://oc-lettings-site.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com"]
 
 # Application definition
 
