@@ -42,6 +42,15 @@ jobs:
           name: run Docker-compose
           command: docker-compose up
 
+  deployment:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: deployment
+          command: curl -X GET $RENDER_URL
+
 workflows:
   build-dockerize-deploy:
     jobs:
@@ -49,6 +58,13 @@ workflows:
       - dockerize:
           requires:
             - build_and_test
+          # filters:
+            # branches:
+              # only: main
+      - deployment:
+          requires:
+            - build_and_test
+            - dockerize
           # filters:
             # branches:
               # only: main
