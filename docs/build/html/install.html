@@ -36,6 +36,51 @@
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this heading">¶</a></h1>
 <section id="installation">
 <span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<p>Pour installer le code de cette application, vous devez disposer au
+préalable d’un compte GitHub, le Git CLI, le SQLite3 CLI et un interpréteur
+Python avec une version 3.6 ou supérieure.</p>
+<p>Une fois que vous vous êtes assuré d’avoir chacun de ces prérequis,
+l’installation se fait en plusieurs étapes, et dépend de votre OS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si vous utilisez Windows et PowerShell, les commandes seront les
+mêmes que celles présentées ci-dessous sauf :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>pour activer l’environnement virtuel : <code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code></p></li>
+<li><p>remplacer <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">&lt;my-command&gt;</span></code> par <code class="docutils literal notranslate"><span class="pre">(Get-Command</span> <span class="pre">&lt;my-command&gt;).Path</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<section id="cloner-le-repository-github">
+<h3>Cloner le repository GitHub<a class="headerlink" href="#cloner-le-repository-github" title="Permalink to this heading">¶</a></h3>
+<p>Exécutez les commandes suivantes :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/Jennifer789C/Projet_13_v2.git</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="creer-l-environnement-virtuel">
+<h3>Créer l’environnement virtuel<a class="headerlink" href="#creer-l-environnement-virtuel" title="Permalink to this heading">¶</a></h3>
+<p>Exécutez les commandes suivantes :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code> (Si l’étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)</p></li>
+<li><p>Activer l’environnement <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code></p></li>
+<li><p>Confirmer que la commande <code class="docutils literal notranslate"><span class="pre">python</span></code> exécute l’interpréteur Python dans l’environnement virtuel <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code></p></li>
+<li><p>Confirmer que la version de l’interpréteur Python est la version 3.6 ou supérieure <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code></p></li>
+<li><p>Confirmer que la commande <code class="docutils literal notranslate"><span class="pre">pip</span></code> exécute l’exécutable pip dans l’environnement virtuel, <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">pip</span></code></p></li>
+<li><p>Pour désactiver l’environnement, <code class="docutils literal notranslate"><span class="pre">deactivate</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="executer-le-site">
+<h3>Exécuter le site<a class="headerlink" href="#executer-le-site" title="Permalink to this heading">¶</a></h3>
+</section>
 </section>
 </section>
 

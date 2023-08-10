@@ -1,7 +1,0 @@
-Install
-=======
-
-.. _Installation:
-
-Installation
-------------
