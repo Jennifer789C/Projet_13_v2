@@ -15,6 +15,7 @@ Welcome to OC-lettings's documentation!
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
+* :ref:`install`
+* :ref:`bdd`
+* :ref:`dev`
 * :ref:`search`
