@@ -165,4 +165,6 @@ avec GitHub
 
 Une fois que tout est configuré, un simple push sur la branche main de 
 votre repository GitHub suffit à déployer l'application qui sera accessible 
-à l'adresse : <nom de votre projet Render>.onrender.com
+à l'adresse : <nom_de_votre_projet_Render>.onrender.com
+
+## Documentation
