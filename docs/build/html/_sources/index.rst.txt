@@ -35,10 +35,10 @@ Les différentes plateformes utilisées sont :
 
 
 
-Indices and tables
-==================
+Navigation
+----------
 
-* :ref:`install`
-* :ref:`bdd`
-* :ref:`dev`
+* :ref:`Installation`
+* :ref:`Base de données`
+* :ref:`Développement`
 * :ref:`search`
