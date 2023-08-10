@@ -27,18 +27,8 @@ Les différentes plateformes utilisées sont :
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Navigation:
 
    install
    bdd
    dev
-
-
-
-Navigation
-----------
-
-* :ref:`Installation`
-* :ref:`Base de données`
-* :ref:`Développement`
-* :ref:`search`
