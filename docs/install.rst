@@ -48,7 +48,7 @@ exceptions du projet. Il permet également la surveillance des performances.
 
 Exécutez les commandes suivantes :
 
-    - Créer un compte `Sentry <https://sentry.io/signup/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2F>`
+    - Créer un compte Sentry_
     - Créer un projet avec la plateforme ``Django``
     - Récupérer la clé dsn et l'intégrer dans votre fichier ``.env``
 
@@ -57,3 +57,5 @@ Exécutez les commandes suivantes :
         SENTRY_DSN=<la clé dsn de votre projet Sentry>
 
     - Se connecter sur votre compte Sentry pour visualiser les logs récupérés par Sentry
+
+.. _Sentry: <https://sentry.io/signup/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2F>
