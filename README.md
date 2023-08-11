@@ -66,9 +66,9 @@ SECRET_KEY=<la SECRET_KEY de votre projet Django>
 - Se connecter à la base de données `.open oc-lettings-site.sqlite3`
 - Afficher les tables dans la base de données `.tables`
 - Afficher les colonnes dans le tableau des profils, `pragma table_info
-  (oc_lettings_site_profile);`
+  (profiles_profile);`
 - Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  oc_lettings_site_profile where favorite_city like 'B%';`
+  profiles_profile where favorite_city like 'B%';`
 - `.quit` pour quitter
 
 #### Panel d'administration
@@ -135,7 +135,7 @@ Pour que tout ceci fonctionne correctement, il faut :
 
 - Créer un compte [Render](https://dashboard.render.com/#) avec GitHub
 - Cliquer sur "Nouveau" puis "Web Service"
-- Indiquer votre repository GitHub public
+- Sélectionner votre repository GitHub public
 - Configurer votre projet en le nommant et en indiquant Docker dans 
   l'option "Runtime". Dans les options avancées, ajouter les variables 
   d'environnement suivantes et indiquer Non dans l'option "Auto-Deploy"
