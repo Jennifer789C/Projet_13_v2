@@ -14,7 +14,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bdd" href="bdd.html" />
+    <link rel="next" title="Base de données" href="bdd.html" />
     <link rel="prev" title="Bienvenue dans la documentation d’OC-lettings !" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -93,123 +93,8 @@ exceptions du projet. Il permet également la surveillance des performances.</p>
 </div>
 <ul class="simple">
 <li><p>Se connecter sur votre compte Sentry pour visualiser les logs récupérés par Sentry</p></li>
-<li><p>Aller sur <a class="reference external" href="http://localhost:8000/sentry-debug/">http://localhost:8000/sentry-debug/</a> pour générer une ZeroDivisionError</p></li>
 </ul>
 </div></blockquote>
-</section>
-</section>
-<section id="executer-le-site-en-local-avec-django">
-<h1>Exécuter le site en local avec Django<a class="headerlink" href="#executer-le-site-en-local-avec-django" title="Permalink to this heading">¶</a></h1>
-<p>Exécutez les commandes suivantes :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">collectstatic</span></code> pour récupérer les fichiers statiques</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p></li>
-<li><p>Aller sur <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> dans un navigateur</p></li>
-<li><p>Confirmer que le site fonctionne et qu’il est possible de naviguer (vous devriez voir plusieurs profils et locations).</p></li>
-<li><p>Pour accéder au panel d’administration, aller sur <a class="reference external" href="http://localhost:8000/admin">http://localhost:8000/admin</a></p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="executer-le-site-en-local-via-docker">
-<h1>Exécuter le site en local via Docker<a class="headerlink" href="#executer-le-site-en-local-via-docker" title="Permalink to this heading">¶</a></h1>
-<p>Docker est une plateforme permettant de lancer des applications en utilisant
-des conteneurs logiciels.</p>
-<p>Exécutez les commandes suivantes :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Créer un compte <cite>DockerHub &lt;https://hub.docker.com/&gt;</cite></p></li>
-<li><p>Installer Docker pour <cite>Windows &lt;https://docs.docker.com/desktop/install/windows-install/&gt;</cite> ou pour <cite>Mac &lt;https://docs.docker.com/desktop/install/mac-install/&gt;</cite></p></li>
-<li><p>Récupérer l’image docker pour exécuter l’application en local, <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">jenny789/oc-lettings:latest</span></code></p></li>
-<li><p>S’assurer que le serveur local n’est pas en cours d’exécution</p></li>
-<li><p>Lancer le serveur via Docker Compose, <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code></p></li>
-<li><p>Le site doit fonctionner de la même façon avec les mêmes urls, qu’en utilisant uniquement Django</p></li>
-<li><p>Pour arrêter le serveur sans supprimer les ressources créées : <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">stop</span></code>, et pour l’arrêter en détruisant l’ensemble des ressources créées : <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span></code></p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="deployer-sur-render">
-<h1>Déployer sur Render<a class="headerlink" href="#deployer-sur-render" title="Permalink to this heading">¶</a></h1>
-<p>Un pipeline CI/CD est mis en place pour le développement et le déploiement de
-cette application. Il est suivi sur la plateforme CircleCI.</p>
-<p>A chaque push sur la branche “main” du repository GitHub, un travail de
-compilation et de tests est lancé. Ensuite, si ce dernier est validé, une image
-Docker de l’application est construite et pusher sur DockerHub. Enfin, si la
-conteneurisation est réussie, l’application est déployée sur Render.</p>
-<p>Pour que tout ceci fonctionne correctement, il faut :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Avoir pushé le repository sur son propre compte GitHub,</p></li>
-<li><p>Avoir configuré son compte CircleCI,</p></li>
-<li><p>Avoir configuré son compte Render.</p></li>
-</ul>
-</div></blockquote>
-<section id="configurer-votre-compte-render">
-<h2>Configurer votre compte Render<a class="headerlink" href="#configurer-votre-compte-render" title="Permalink to this heading">¶</a></h2>
-<p>Exécutez les commandes suivantes :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Créer un compte <cite>Render &lt;https://dashboard.render.com/#&gt;</cite> avec GitHub</p></li>
-<li><p>Cliquer sur “Nouveau” puis “Web Service”</p></li>
-<li><p>Sélectionner votre repository GitHub public</p></li>
-<li><p>Configurer votre projet en le nommant et en indiquant Docker dans l’option “Runtime”. Dans les options avancées, ajouter les variables d’environnement suivantes et indiquer Non dans l’option “Auto-Deploy”</p></li>
-</ul>
-</div></blockquote>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>variable Render</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>SECRET_KEY</p></td>
-<td><p>la SECRET KEY de votre projet Django</p></td>
-</tr>
-<tr class="row-odd"><td><p>SENTRY_DSN</p></td>
-<td><p>la clé dsn de votre projet Sentry</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="configurer-votre-compte-circleci">
-<h2>Configurer votre compte CircleCI<a class="headerlink" href="#configurer-votre-compte-circleci" title="Permalink to this heading">¶</a></h2>
-<p>Exécutez les commandes suivantes :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Créer un compte <cite>CircleCI &lt;https://circleci.com/vcs-authorize/?return-to=https%3A%2F%2Fapp.circleci.com%2Fdashboard&gt;</cite> avec GitHub</p></li>
-<li><p>Créer votre projet CircleCI à partir de votre repository GitHub, en sélectionnant l’option “Fastest” et la branche “main”</p></li>
-<li><p>Dans les paramètres du projet, onglet Variables d’environnement, ajouter plusieurs variables :</p></li>
-</ul>
-</div></blockquote>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variable CircleCI</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>SECRET_KEY</p></td>
-<td><p>la SECRET KEY de votre projet Django</p></td>
-</tr>
-<tr class="row-odd"><td><p>SENTRY_DSN</p></td>
-<td><p>la clé dsn de votre projet Sentry</p></td>
-</tr>
-<tr class="row-even"><td><p>DOCKER_USER</p></td>
-<td><p>le nom d’utilisateur de votre compte Docker</p></td>
-</tr>
-<tr class="row-odd"><td><p>DOCKER_PASSWORD</p></td>
-<td><p>le mot de passe de votre compte Docker</p></td>
-</tr>
-<tr class="row-even"><td><p>RENDER_URL</p></td>
-<td><p>l’url privée de votre projet Render (Deploy Hook)</p></td>
-</tr>
-</tbody>
-</table>
-<p>Une fois que tout est configuré, un simple push sur la branche main de votre
-repository GitHub suffit à déployer l’application qui sera accessible à
-l’adresse : &lt;nom_de_votre_projet_Render&gt;.onrender.com</p>
 </section>
 </section>
 
@@ -238,15 +123,8 @@ l’adresse : &lt;nom_de_votre_projet_Render&gt;.onrender.com</p>
 <li class="toctree-l2"><a class="reference internal" href="#lier-le-projet-a-sentry">Lier le projet à Sentry</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#executer-le-site-en-local-avec-django">Exécuter le site en local avec Django</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#executer-le-site-en-local-via-docker">Exécuter le site en local via Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#deployer-sur-render">Déployer sur Render</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configurer-votre-compte-render">Configurer votre compte Render</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configurer-votre-compte-circleci">Configurer votre compte CircleCI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bdd.html">Bdd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html">Dev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdd.html">Base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Développement</a></li>
 </ul>
 
 <div class="relations">
@@ -254,7 +132,7 @@ l’adresse : &lt;nom_de_votre_projet_Render&gt;.onrender.com</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Bienvenue dans la documentation d’OC-lettings !</a></li>
-      <li>Next: <a href="bdd.html" title="next chapter">Bdd</a></li>
+      <li>Next: <a href="bdd.html" title="next chapter">Base de données</a></li>
   </ul></li>
 </ul>
 </div>
