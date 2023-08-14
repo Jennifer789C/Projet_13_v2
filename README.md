@@ -168,3 +168,5 @@ votre repository GitHub suffit à déployer l'application qui sera accessible
 à l'adresse : <nom_de_votre_projet_Render>.onrender.com
 
 ## Documentation
+
+Vous trouverez toute la documentation de cette application [ici](https://projet-13-v2.readthedocs.io/fr/latest/)
