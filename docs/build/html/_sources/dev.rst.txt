@@ -36,13 +36,17 @@ des conteneurs logiciels.
 
 Exécutez les commandes suivantes :
 
-    - Créer un compte `DockerHub <https://hub.docker.com/>`
-    - Installer Docker pour `Windows <https://docs.docker.com/desktop/install/windows-install/>` ou pour `Mac <https://docs.docker.com/desktop/install/mac-install/>`
+    - Créer un compte DockerHub_
+    - Installer Docker pour Windows_ ou pour Mac_
     - Récupérer l'image docker pour exécuter l'application en local, ``docker pull jenny789/oc-lettings:latest``
     - S'assurer que le serveur local n'est pas en cours d'exécution
     - Lancer le serveur via Docker Compose, ``docker-compose up``
     - Le site doit fonctionner de la même façon avec les mêmes urls, qu'en utilisant uniquement Django
     - Pour arrêter le serveur sans supprimer les ressources créées : ``docker-compose stop``, et pour l'arrêter en détruisant l'ensemble des ressources créées : ``docker-compose down``
+
+.. _DockerHub: <https://hub.docker.com/>
+.. _Windows: <https://docs.docker.com/desktop/install/windows-install/>
+.. _Mac: <https://docs.docker.com/desktop/install/mac-install/>
 
 Déployer sur Render
 -------------------
@@ -66,7 +70,7 @@ ______________________________
 
 Exécutez les commandes suivantes :
 
-    - Créer un compte `Render <https://dashboard.render.com/#>` avec GitHub
+    - Créer un compte Render_ avec GitHub
     - Cliquer sur "Nouveau" puis "Web Service"
     - Sélectionner votre repository GitHub public
     - Configurer votre projet en le nommant et en indiquant Docker dans l'option "Runtime". Dans les options avancées, ajouter les variables d'environnement suivantes et indiquer Non dans l'option "Auto-Deploy"
@@ -79,12 +83,14 @@ Exécutez les commandes suivantes :
 |    SENTRY_DSN   |   la clé dsn de votre projet Sentry  |
 +-----------------+--------------------------------------+
 
+.. _Render: <https://dashboard.render.com/#>
+
 Configurer votre compte CircleCI
 ________________________________
 
 Exécutez les commandes suivantes :
 
-    - Créer un compte `CircleCI <https://circleci.com/vcs-authorize/?return-to=https%3A%2F%2Fapp.circleci.com%2Fdashboard>` avec GitHub
+    - Créer un compte CircleCI_ avec GitHub
     - Créer votre projet CircleCI à partir de votre repository GitHub, en sélectionnant l'option "Fastest" et la branche "main"
     - Dans les paramètres du projet, onglet Variables d'environnement, ajouter plusieurs variables :
 
@@ -105,3 +111,5 @@ Exécutez les commandes suivantes :
 Une fois que tout est configuré, un simple push sur la branche main de votre
 repository GitHub suffit à déployer l'application qui sera accessible à
 l'adresse : <nom_de_votre_projet_Render>.onrender.com
+
+.. _CircleCI: <https://circleci.com/vcs-authorize/?return-to=https%3A%2F%2Fapp.circleci.com%2Fdashboard>
