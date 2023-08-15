@@ -9,7 +9,7 @@ services:
       - SQLITE3_DB=oc-lettings-site.sqlite3
   web:
     image: $DOCKER_USER/oc-lettings:$CIRCLE_SHA1
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
